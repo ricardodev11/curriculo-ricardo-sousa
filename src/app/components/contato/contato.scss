@@ -7,16 +7,9 @@
 .contato {
   display: flex;
   flex-direction: column;
-  gap: var(--space-2xl);
-  padding: var(--space-2xl) var(--space-lg);
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-sm);
-
-  @include tablet {
-    padding: var(--space-3xl) var(--space-2xl);
-  }
+  gap: var(--space-xl);
+  padding: var(--space-2xl) 0 var(--space-lg);
+  border-top: 1px solid var(--border-color);
 
   &__conteudo {
     display: flex;
@@ -30,28 +23,29 @@
     display: flex;
     flex-direction: column;
     gap: var(--space-xs);
-    max-width: 520px;
+    max-width: 540px;
   }
 
   &__titulo {
-    font-size: 1.8rem;
-    font-weight: 800;
+    font-family: var(--font-editorial);
+    font-size: 2.2rem;
+    font-weight: 500;
     color: var(--text-primary);
   }
 
   &__subtitulo {
-    color: var(--text-secondary);
-    font-size: 1rem;
+    color: var(--text-muted);
+    font-size: 0.95rem;
     line-height: 1.6;
   }
 
-  // ─── BOTÕES DE AÇÃO ─────────────────────────────
+  // ─── BOTÕES DE AÇÃO EDITORIAL ───────────────────
   &__acoes {
     display: flex;
     flex-direction: column;
     gap: var(--space-md);
     width: 100%;
-    max-width: 400px;
+    max-width: 380px;
 
     @include tablet {
       flex-direction: row;
@@ -63,35 +57,25 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: var(--space-md) var(--space-xl);
-    border-radius: var(--radius-full);
-    border: none;
-    background: var(--accent);
+    padding: 10px 24px;
+    border-radius: var(--radius-pill);
+    border: 1px solid var(--border-dark);
+    background: var(--text-primary);
     color: #ffffff;
     font-family: var(--font-body);
-    font-size: 0.95rem;
-    font-weight: 600;
+    font-size: 0.9rem;
+    font-weight: 500;
     cursor: pointer;
-    box-shadow: var(--shadow-glow);
-    transition: all var(--transition-fast);
+    transition: all var(--transition);
 
     &:hover {
-      background: var(--accent-hover);
+      background: #333333;
       transform: translateY(-2px);
-      box-shadow: 0 4px 16px var(--accent-glow);
-    }
-
-    &:active {
-      transform: translateY(0);
     }
 
     &--sucesso {
-      background: #10b981; // Verde de confirmação
-      box-shadow: 0 0 20px rgba(16, 185, 129, 0.25);
-
-      &:hover {
-        background: #059669;
-      }
+      background: #10b981;
+      border-color: #10b981;
     }
   }
 
@@ -99,29 +83,25 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: var(--space-md) var(--space-xl);
-    border-radius: var(--radius-full);
+    padding: 10px 24px;
+    border-radius: var(--radius-pill);
     border: 1px solid var(--border-color);
-    background: var(--bg-secondary);
+    background: #ffffff;
     color: var(--text-primary);
     text-decoration: none;
-    font-size: 0.95rem;
-    font-weight: 600;
-    transition: all var(--transition-fast);
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all var(--transition);
 
     &:hover {
-      border-color: var(--accent);
-      color: var(--accent);
+      border-color: var(--border-dark);
       transform: translateY(-2px);
-      background: var(--accent-light);
     }
   }
 
   // ─── REDES SOCIAIS ──────────────────────────────
   &__redes {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
     gap: var(--space-md);
     margin-top: var(--space-xs);
   }
@@ -129,22 +109,20 @@
   &__rede-item {
     display: inline-flex;
     align-items: center;
-    gap: var(--space-xs);
-    padding: var(--space-xs) var(--space-lg);
-    border-radius: var(--radius-full);
+    padding: 6px 18px;
+    border-radius: var(--radius-pill);
     border: 1px solid var(--border-color);
-    background: var(--bg-primary);
+    background: var(--bg-card);
     color: var(--text-secondary);
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 500;
-    transition: all var(--transition-fast);
+    transition: all var(--transition);
 
     &:hover {
-      border-color: var(--accent);
-      color: var(--accent);
+      border-color: var(--border-dark);
+      color: var(--text-primary);
       transform: translateY(-2px);
-      box-shadow: var(--shadow-sm);
     }
   }
 

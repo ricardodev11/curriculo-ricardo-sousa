@@ -1,6 +1,46 @@
-<main class="app-container">
-  <app-hero />
-  <app-skills />
-  <app-experiencia />
-  <app-contato />
-</main>
+<div class="canvas-wrapper">
+  <div class="canvas">
+    <!-- Barra Superior Editorial (Navbar) -->
+    <header class="topbar">
+      <div class="topbar__autor">
+        <span class="topbar__nome">Ricardo Sousa</span>
+        <span class="topbar__cargo">Dev Full-Stack • Brasil</span>
+      </div>
+
+      <nav class="topbar__nav" aria-label="Navegação principal">
+        <a href="#inicio" class="topbar__link">Início</a>
+        <a href="#habilidades" class="topbar__link">Habilidades</a>
+        <a href="#trajetoria" class="topbar__link">Trajetória</a>
+        <a href="#contato" class="topbar__link">Contato</a>
+      </nav>
+
+      <div class="topbar__social">
+        <span class="topbar__social-label">Social</span>
+        <div class="topbar__social-links">
+          <a href="https://github.com/ricardodev11" target="_blank" rel="noopener noreferrer">GH</a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LI</a>
+          <a href="mailto:ricardo.sousa.dev@gmail.com">EM</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="content">
+      <div id="inicio">
+        <app-hero />
+      </div>
+
+      <div id="habilidades">
+        <app-skills />
+      </div>
+
+      <div id="trajetoria">
+        <app-experiencia />
+      </div>
+
+      <div id="contato">
+        <app-contato />
+      </div>
+    </main>
+  </div>
+</div>

@@ -1,51 +1,140 @@
 @use '../styles/mixins' as *;
 
-.app-container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: var(--space-md) var(--space-sm);
+.canvas-wrapper {
   min-height: 100vh;
+  padding: var(--space-md) var(--space-xs);
+  display: flex;
+  justify-content: center;
+
+  @include tablet {
+    padding: var(--space-xl) var(--space-md);
+  }
+
+  @include desktop {
+    padding: var(--space-2xl) var(--space-xl);
+  }
+}
+
+.canvas {
+  width: 100%;
+  max-width: 1260px;
+  background: var(--bg-canvas);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg) var(--space-md);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.06);
   display: flex;
   flex-direction: column;
   gap: var(--space-2xl);
 
   @include tablet {
-    padding: var(--space-xl) var(--space-lg);
+    padding: var(--space-2xl) var(--space-xl);
+    gap: var(--space-3xl);
   }
 
   @include desktop {
-    padding: var(--space-3xl) 0;
+    padding: var(--space-3xl) var(--space-3xl);
   }
 }
 
-// ─── ANIMAÇÕES ESCALONADAS (Fase 6: Polish) ───────────
-app-hero {
-  animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) both;
-  animation-delay: 0s;
-}
+// ─── TOPBAR EDITORIAL ───────────────────────────────
+.topbar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  align-items: center;
 
-app-skills {
-  animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) both;
-  animation-delay: 0.15s;
-}
-
-app-experiencia {
-  animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) both;
-  animation-delay: 0.3s;
-}
-
-app-contato {
-  animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) both;
-  animation-delay: 0.45s;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
+  @include tablet {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+  &__autor {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    @include tablet {
+      text-align: left;
+    }
   }
+
+  &__nome {
+    font-family: var(--font-editorial);
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--text-primary);
+  }
+
+  &__cargo {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  // Cápsula de navegação central flutuante
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    background: #ffffff;
+    padding: 8px 24px;
+    border-radius: var(--radius-pill);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  }
+
+  &__link {
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    transition: color var(--transition);
+
+    &:hover {
+      color: var(--text-primary);
+    }
+  }
+
+  &__social {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+
+    @include tablet {
+      align-items: flex-end;
+    }
+
+    &-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    &-links {
+      display: flex;
+      gap: var(--space-sm);
+
+      a {
+        text-decoration: none;
+        font-family: var(--font-mono);
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: var(--text-primary);
+        letter-spacing: 0.05em;
+        transition: color var(--transition);
+
+        &:hover {
+          color: var(--accent-blue);
+        }
+      }
+    }
+  }
+}
+
+// ─── CONTEÚDO PRINCIPAL ─────────────────────────────
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3xl);
 }
