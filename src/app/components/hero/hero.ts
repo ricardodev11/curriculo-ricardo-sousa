@@ -13,6 +13,5 @@ export class HeroComponent {
   papel = signal('Desenvolvedor Full-Stack');
   bio = signal('Focado em criar soluções web modernas, limpas e de alto desempenho.');
 
-  // Foto real do perfil adicionada na pasta public/
-  avatarUrl = signal('perfil.jpg');
+ 
 }
