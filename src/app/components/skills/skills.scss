@@ -49,17 +49,17 @@
     transition: all var(--transition);
 
     &:hover {
-      background: #f0f0f0;
+      background: var(--bg-hover);
     }
 
     &--ativo {
-      background: var(--text-primary);
-      color: #ffffff;
-      border-color: var(--text-primary);
+      background: var(--btn-solid-bg);
+      color: var(--btn-solid-text);
+      border-color: var(--btn-solid-bg);
 
       &:hover {
-        background: var(--text-primary);
-        color: #ffffff;
+        background: var(--btn-solid-hover);
+        color: var(--btn-solid-text);
       }
     }
   }

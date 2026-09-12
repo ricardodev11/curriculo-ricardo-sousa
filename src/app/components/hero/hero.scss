@@ -124,7 +124,7 @@
 
   &:hover {
     background: var(--border-dark);
-    color: #ffffff;
+    color: var(--text-on-accent);
     transform: translateY(-2px);
   }
 }

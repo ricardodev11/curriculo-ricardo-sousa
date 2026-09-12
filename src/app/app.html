@@ -21,6 +21,14 @@
           <a href="https://www.linkedin.com/in/ricardo-sousa-66b506436/" target="_blank" rel="noopener noreferrer">LI</a>
         </div>
       </div>
+
+      <button
+        type="button"
+        class="topbar__tema"
+        (click)="toggleTema()"
+        [attr.aria-label]="tema() === 'dark' ? 'Ativar tema claro' : 'Ativar tema escuro'">
+        {{ tema() === 'dark' ? '☀️' : '🌙' }}
+      </button>
     </header>
 
     <!-- Conteúdo Principal -->

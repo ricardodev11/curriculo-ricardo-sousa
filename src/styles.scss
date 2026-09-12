@@ -3,6 +3,8 @@
 
 :root {
   /* Paleta Editorial Minimalista (Baseada na referência Dribbble) */
+  color-scheme: light;
+
   --bg-primary: #ebebeb;        /* Fundo externo suave */
   --bg-canvas: #fafafa;         /* O "papel" principal da página */
   --bg-card: #ffffff;           /* Cartões brancos puros */
@@ -42,6 +44,34 @@
   /* Transições e Sombras */
   --transition: 200ms ease;
   --shadow-subtle: 0 2px 10px rgba(0, 0, 0, 0.04);
+
+  /* Tokens derivados (tema claro) */
+  --bg-hover: #f0f0f0;
+  --btn-solid-bg: #111111;
+  --btn-solid-text: #ffffff;
+  --btn-solid-hover: #333333;
+  --text-on-accent: #ffffff;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg-primary: #111114;
+  --bg-canvas: #17171c;
+  --bg-card: #212127;
+  --bg-pill: #212127;
+  --border-color: #30303a;
+  --border-dark: #e8e8ea;
+  --text-primary: #f0f0f2;
+  --text-secondary: #b9b9c2;
+  --text-muted: #87878f;
+  --accent: #f0f0f2;
+  --accent-blue: #6b9bff;
+  --bg-hover: #2c2c33;
+  --btn-solid-bg: #f0f0f2;
+  --btn-solid-text: #111111;
+  --btn-solid-hover: #ffffff;
+  --text-on-accent: #111111;
 }
 
 *, *::before, *::after {
