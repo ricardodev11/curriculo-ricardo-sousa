@@ -12,6 +12,4 @@ export class HeroComponent {
   nome = signal('Ricardo Sousa');
   papel = signal('Desenvolvedor Full-Stack');
   bio = signal('Focado em criar soluções web modernas, limpas e de alto desempenho.');
-
- 
 }

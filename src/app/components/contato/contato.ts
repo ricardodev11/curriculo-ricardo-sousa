@@ -8,7 +8,7 @@ import { Component, ChangeDetectionStrategy, signal } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ContatoComponent {
-  email = signal('ricardo.sousa.dev@gmail.com');
+  email = signal('riccsousa002211@gmail.com');
   copiado = signal(false);
 
   // Clipboard API nativa com feedback reativo via Signal

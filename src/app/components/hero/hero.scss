@@ -35,27 +35,6 @@
     }
   }
 
-  // 1. Foto Quadrada à Esquerda
-  &__foto-container {
-    width: 100%;
-    max-width: 320px;
-  }
-
-  &__foto {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    object-position: center 80%;
-    border-radius: var(--radius-sm);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    display: block;
-    transition: transform var(--transition);
-
-    &:hover {
-      transform: scale(1.01);
-    }
-  }
-
   // 2. Pílulas Flutuantes no Centro
   &__pills-container {
     display: flex;
