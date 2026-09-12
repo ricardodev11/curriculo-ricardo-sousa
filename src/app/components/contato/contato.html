@@ -1,0 +1,51 @@
+<footer class="contato">
+  <div class="contato__conteudo">
+    <div class="contato__info">
+      <h2 class="contato__titulo">Vamos Conversar?</h2>
+      <p class="contato__subtitulo">
+        Estou disponível para novos projetos, desafios e oportunidades no setor de tecnologia.
+      </p>
+    </div>
+
+    <!-- Botão Interativo com Feedback de Cópia -->
+    <div class="contato__acoes">
+      <button
+        type="button"
+        class="contato__btn-copiar"
+        [class.contato__btn-copiar--sucesso]="copiado()"
+        (click)="copiarEmail()">
+        @if (copiado()) {
+          <span class="contato__btn-texto">✓ E-mail Copiado!</span>
+        } @else {
+          <span class="contato__btn-texto">📋 Copiar E-mail</span>
+        }
+      </button>
+
+      <a [href]="'mailto:' + email()" class="contato__link-direto">
+        ✉️ Enviar Mensagem
+      </a>
+    </div>
+
+    <!-- Links Sociais / Profissionais -->
+    <div class="contato__redes">
+      <a
+        href="https://github.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="contato__rede-item">
+        <span>🐙 GitHub</span>
+      </a>
+      <a
+        href="https://linkedin.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="contato__rede-item">
+        <span>💼 LinkedIn</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="contato__rodape">
+    <p>© 2026 Ricardo Sousa • Desenvolvido com Angular 22 & SCSS • Proenergia Summit</p>
+  </div>
+</footer>

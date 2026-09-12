@@ -1,0 +1,148 @@
+@use '../../../styles/mixins' as *;
+
+:host {
+  display: block;
+}
+
+.experiencia {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+  padding: var(--space-2xl) var(--space-lg);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+
+  @include tablet {
+    padding: var(--space-2xl);
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  &__titulo {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+
+  &__subtitulo {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+  }
+}
+
+// ─── TIMELINE VERTICAL ─────────────────────────────
+.timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-left: var(--space-md);
+
+  @include tablet {
+    padding-left: var(--space-xl);
+  }
+
+  &__item {
+    position: relative;
+    padding-left: var(--space-xl);
+    padding-bottom: var(--space-2xl);
+
+    &:last-child {
+      padding-bottom: 0;
+
+      &::before {
+        display: none; // Não estende a linha após o último item
+      }
+    }
+
+    // Linha vertical conectora
+    &::before {
+      content: '';
+      position: absolute;
+      left: 5px;
+      top: 14px;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--accent), var(--border-color));
+    }
+  }
+
+  // Nó circular iluminado
+  &__marcador {
+    position: absolute;
+    left: 0;
+    top: 6px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 3px solid var(--bg-card);
+    box-shadow: 0 0 0 2px var(--accent), var(--shadow-glow);
+    z-index: 1;
+  }
+
+  &__conteudo {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    background: var(--bg-primary);
+    padding: var(--space-lg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+
+    &:hover {
+      transform: translateX(4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--accent);
+    }
+  }
+
+  &__meta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+  }
+
+  &__periodo {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--accent);
+  }
+
+  &__tag {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    padding: 1px 8px;
+    border-radius: var(--radius-full);
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+  }
+
+  &__titulo-item {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+
+  &__instituicao {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+  }
+
+  &__descricao {
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-top: var(--space-xs);
+  }
+}

@@ -1,11 +1,18 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
+import { HeroComponent } from './components/hero/hero';
+import { SkillsComponent } from './components/skills/skills';
+import { ExperienciaComponent } from './components/experiencia/experiencia';
+import { ContatoComponent } from './components/contato/contato';
 
 @Component({
-  imports: [],
   selector: 'app-root',
-  styleUrl: './app.scss',
+  imports: [
+    HeroComponent,
+    SkillsComponent,
+    ExperienciaComponent,
+    ContatoComponent,
+  ],
   templateUrl: './app.html',
+  styleUrl: './app.scss',
 })
-export class App {
-  protected readonly title = signal('curriculo-ricardo-sousa');
-}
+export class App {}

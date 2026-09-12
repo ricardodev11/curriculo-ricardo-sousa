@@ -1,0 +1,162 @@
+@use '../../../styles/mixins' as *;
+
+:host {
+  display: block;
+}
+
+.skills {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+  padding: var(--space-2xl) var(--space-lg);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+
+  @include tablet {
+    padding: var(--space-2xl);
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  &__titulo {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+
+  &__subtitulo {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+  }
+
+  // ─── BOTÕES DE FILTRO ───────────────────────────
+  &__filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+  }
+
+  &__filtro-btn {
+    padding: var(--space-xs) var(--space-md);
+    border-radius: var(--radius-full);
+    border: 1px solid var(--border-color);
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+
+    &:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: var(--accent-light);
+    }
+
+    &--ativo {
+      background: var(--accent);
+      color: #ffffff;
+      border-color: var(--accent);
+      box-shadow: var(--shadow-glow);
+
+      &:hover {
+        background: var(--accent-hover);
+        color: #ffffff;
+      }
+    }
+  }
+
+  // ─── GRADE DE HABILIDADES (CSS GRID) ────────────
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include desktop {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__card {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-md);
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--accent);
+    }
+
+    &-icon {
+      font-size: 1.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      background: var(--bg-card);
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-color);
+      flex-shrink: 0;
+    }
+
+    &-conteudo {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      min-width: 0;
+    }
+
+    &-nome {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      @include text-truncate(1);
+    }
+
+    &-meta {
+      display: flex;
+      align-items: center;
+      gap: var(--space-xs);
+    }
+
+    &-categoria {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    &-badge {
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 1px 6px;
+      border-radius: var(--radius-full);
+      background: var(--accent-light);
+      color: var(--accent);
+    }
+  }
+
+  &__vazio {
+    color: var(--text-muted);
+    font-style: italic;
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: var(--space-xl);
+  }
+}

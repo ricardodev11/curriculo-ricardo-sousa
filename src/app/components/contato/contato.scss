@@ -1,0 +1,159 @@
+@use '../../../styles/mixins' as *;
+
+:host {
+  display: block;
+}
+
+.contato {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xl);
+  padding: var(--space-2xl) var(--space-lg);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+
+  @include tablet {
+    padding: var(--space-3xl) var(--space-2xl);
+  }
+
+  &__conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--space-xl);
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    max-width: 520px;
+  }
+
+  &__titulo {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--text-primary);
+  }
+
+  &__subtitulo {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  // ─── BOTÕES DE AÇÃO ─────────────────────────────
+  &__acoes {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    width: 100%;
+    max-width: 400px;
+
+    @include tablet {
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+
+  &__btn-copiar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-md) var(--space-xl);
+    border-radius: var(--radius-full);
+    border: none;
+    background: var(--accent);
+    color: #ffffff;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: var(--shadow-glow);
+    transition: all var(--transition-fast);
+
+    &:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px var(--accent-glow);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+
+    &--sucesso {
+      background: #10b981; // Verde de confirmação
+      box-shadow: 0 0 20px rgba(16, 185, 129, 0.25);
+
+      &:hover {
+        background: #059669;
+      }
+    }
+  }
+
+  &__link-direto {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-md) var(--space-xl);
+    border-radius: var(--radius-full);
+    border: 1px solid var(--border-color);
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: all var(--transition-fast);
+
+    &:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-2px);
+      background: var(--accent-light);
+    }
+  }
+
+  // ─── REDES SOCIAIS ──────────────────────────────
+  &__redes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-md);
+    margin-top: var(--space-xs);
+  }
+
+  &__rede-item {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    padding: var(--space-xs) var(--space-lg);
+    border-radius: var(--radius-full);
+    border: 1px solid var(--border-color);
+    background: var(--bg-primary);
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all var(--transition-fast);
+
+    &:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+    }
+  }
+
+  // ─── RODAPÉ ─────────────────────────────────────
+  &__rodape {
+    border-top: 1px solid var(--border-color);
+    padding-top: var(--space-lg);
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+  }
+}
