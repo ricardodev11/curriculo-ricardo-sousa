@@ -15,8 +15,11 @@ export class SkillsComponent {
     { nome: 'CSS3 & SCSS', categoria: 'Frontend', nivel: 'Intermediário', icone: '🎨' },
     { nome: 'Angular 22', categoria: 'Frontend', nivel: 'Em Formação', icone: '🅰️' },
     { nome: 'TypeScript', categoria: 'Frontend', nivel: 'Fundamentos', icone: '🔷' },
+    { nome: 'JavaScript', categoria: 'Frontend', nivel: 'Fundamentos', icone: '🟨' },
+    { nome: 'Responsividade & Acessibilidade (WCAG)', categoria: 'Frontend', nivel: 'Praticando', icone: '♿' },
     { nome: 'Node.js & npm', categoria: 'Ferramentas', nivel: 'Ambiente', icone: '🟢' },
-    { nome: 'Git & GitHub', categoria: 'Ferramentas', nivel: 'Fundamentos', icone: '📦' },
+    { nome: 'APIs RESTful & Integrações', categoria: 'Ferramentas', nivel: 'Fundamentos', icone: '🔗' },
+    { nome: 'Git & GitHub (Versionamento)', categoria: 'Ferramentas', nivel: 'Fundamentos', icone: '📦' },
     { nome: 'VS Code & Antigravity', categoria: 'Ferramentas', nivel: 'Uso Diário', icone: '⚡' },
   ]);
 
